@@ -1,0 +1,55 @@
+#include<iostream>
+using namespace std;
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	float h,u,d,f;
+	while(scanf("%f %f %f %f",&h,&u,&d,&f),(h))
+	{
+		float height=0;
+		float last=0;
+		float c=0,tu;
+		tu=0;
+		float upp=u;;
+		while(1)
+		{	c++;
+		//	cout<<"l:"<<c<<"\n";
+			upp=upp-tu;
+		//	cout<<"upp:"<<upp<<"\n";
+			if(upp<=0.0f)
+				upp=0.0f;
+			height=height+upp;
+		//	cout<<"heie"<<height<<"\n";
+			if(height>h)
+				break;
+
+			height=height-d;
+		//	cout<<"down hei"<<height<<"\n";
+			if(height<0.0f)
+				break;
+			tu=(f/100.0)*u;
+		//	cout<<"\nday\n"<<c;
+		/*	if(last>0)
+			last=last-tu;
+			if(ceil(last)<=0)
+				last=0;
+				cout<<"last:"<<last<<"   ";
+			height+=last;
+			if(ceil(height)>h)
+				break;
+			height=height-d;
+			cout<<"\n"<<"height"<<height;
+			if(floor(height)<0 || ceil(height)>h)
+				break;
+				*/
+
+		}
+		if(height<0.0f)
+			cout<<"failure on day "<<c;
+		else
+			cout<<"success on day "<<c;
+		cout<<"\n";
+	}
+	return 0;
+}

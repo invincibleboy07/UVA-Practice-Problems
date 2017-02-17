@@ -1,0 +1,47 @@
+#include<iostream>
+using namespace std;
+#include<stdio.h>
+int main()
+{
+	int t;
+	cin>>t;
+	int p,b,h,w;
+	while (scanf("%d %d %d %d", &p, &b, &h, &w) != EOF) 
+	{
+		
+	//	cin>>p>>b>>h>>w;
+		int mbud=b+1;
+
+		while(h--)
+		{
+			int c=0;
+			cin>>c;
+			int max=-1;
+			for(int i=0;i<w;i++)
+			{
+				int temp;
+				cin>>temp;
+				if(temp>max)
+					max=temp;
+			}
+			int ne;
+			if(max<p)
+				continue;
+			else
+				 ne=p*c;
+			if(ne<mbud)
+				mbud=ne;
+
+		}
+
+		if(mbud<=b)
+			cout<<mbud;
+		else
+			cout<<"stay home";
+		cout<<"\n";
+	}
+	return 0;
+}
+
+
+
